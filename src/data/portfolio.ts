@@ -16,7 +16,7 @@ export const personalInfo = {
   title: "Computer Science (Data Science) Undergraduate",
   email: "aananddshukla@gmail.com",
   location: "Kanpur, India",
-  bio: "Aspiring Software Engineer with a strong foundation in Data Structures and Algorithms. Eager to apply analytical problem-solving skills and Core Java knowledge to build efficient and scalable software solutions.",
+  bio: "Aspiring Software Engineer with a strong foundation in Data Structures and Algorithms. Eager to apply analytical problemsolving skills and programming knowledge to build efficient software solutions for a dynamic engineering team.",
   hobbies: ["Programming", "Listening to Music", "Reading Books", "Mentoring Students"]
 };
 
