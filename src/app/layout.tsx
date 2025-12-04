@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Anand Shukla | Software Engineer",
   description: "Portfolio of Anand Shukla, a Software Engineer specializing in modern web technologies and problem solving.",
+  icons: {
+    icon: "/images/favicon.jpg",
+  },
 };
 
 export default function RootLayout({
