@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Mode Defaults */
+  --background: 255 255 255;
+  --foreground: 23 23 23;
+  --card-bg: 255 255 255;
+  --card-border: 229 231 235;
+  --accent: 163 31 77;
+}
+
+[data-theme='dark'] {
+  /* Dark Mode Defaults - ORIGINAL RESTORED */
+  --background-start: 10 10 10;
+  --background-end: 20 20 20;
+  --foreground: 255 255 255;
+  --card-bg: 255 255 255;
+  /* Opacity handled in utility */
+  --card-border: 255 255 255;
+  --accent: 163 31 77;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Body */
+body {
+  color: rgb(var(--foreground));
+  background-color: rgb(var(--background));
+}
+
+/* Dark Mode Body - ORIGINAL GRADIENT */
+[data-theme='dark'] body {
+  color: rgb(var(--foreground));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end))) rgb(var(--background-start));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Glass Card - Theme Dependent */
+  .glass-card {
+    @apply transition-all duration-300;
+  }
+
+  /* Light Mode: Clean, Bordered, Shadow */
+  html:not([data-theme='dark']) .glass-card {
+    @apply bg-white border border-gray-200 shadow-lg hover:shadow-xl hover:border-[#a31f4d]/30 text-gray-900;
+  }
+
+  /* Dark Mode: Original Glass Effect */
+  [data-theme='dark'] .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl text-white;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400;
+  }
+
+  .accent-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#a31f4d] to-[#ff4d8d];
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
