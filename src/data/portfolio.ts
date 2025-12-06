@@ -66,17 +66,18 @@ export const projects: Project[] = [
     title: "Task Master Web Application",
     tagline: "Full-stack task management with Spring Boot and React.",
     techStack: ["Java", "Spring Boot", "React", "H2 Database", "Render", "Vercel"],
+    live: "https://taskmaster-two-steel.vercel.app/",
     keyFeatures: [
       "Developed a full-stack application using Spring Boot and React.",
       "Used H2 Database for fast in-memory task storage.",
       "Deployed on Render and Vercel enabling online CRUD task management."
     ],
-    image: "/images/kk.png", // Placeholder
+    image: "/project_images/Task master.png",
     category: "Full Stack"
   },
   {
     slug: "brain-tumor-detection",
-    title: "Brain Tumor Detection System",
+    title: "NeuroScan_AI",
     tagline: "Deep learning model for tumor detection from MRI scans.",
     techStack: ["Python", "Deep Learning", "Transfer Learning (VGG16)", "Gradio"],
     keyFeatures: [
@@ -84,19 +85,20 @@ export const projects: Project[] = [
       "Achieved 96% accuracy on MRI scans.",
       "Integrated with Gradio for real-time tumor prediction from user uploads."
     ],
-    image: "/project_images/AIML Based Medical Diagnosis & Report Analysis.png", // Placeholder
+    image: "/project_images/NeuroScan AI.png",
     category: "AI/ML"
   },
   {
     slug: "disease-prediction",
-    title: "Disease Prediction & Medicine Recommendation",
+    title: "Heal Wise AI",
     tagline: "Multi-disease prediction and automated medicine recommendations.",
     techStack: ["Machine Learning", "Python", "Pandas", "Scikit-learn"],
+    live: "https://healwiseai-nu.vercel.app/",
     keyFeatures: [
       "Developed a machine learning-driven multi-disease prediction system.",
       "Automated medicine recommendations for improved treatment precision."
     ],
-    image: "/images/kk.png", // Placeholder
+    image: "/project_images/heal wise ai.png",
     category: "AI/ML"
   },
   {
@@ -116,6 +118,7 @@ export const projects: Project[] = [
     title: "Job Portal (Django)",
     tagline: "Recruitment platform with job search and employer posting.",
     techStack: ["Python", "Django", "HTML/CSS"],
+    live: "https://job-portal-application-y53g.onrender.com/",
     keyFeatures: [
       "Created a recruitment platform with job search, applications, and employer posting."
     ],
@@ -128,6 +131,7 @@ export const projects: Project[] = [
     title: "AI/ML Based Medical Diagnosis & Report Analysis",
     tagline: "Symptom-based disease prediction and MRI report analysis using AI.",
     techStack: ["Python", "ML", "DL", "Transfer Learning (VGG16)", "Computer Vision", "Flask/Django"],
+    live: "https://ai-ml-based-medical-daigonosis-and.onrender.com/",
     keyFeatures: [
       "Predicts diseases from user symptoms.",
       "Analyzes MRI scans for brain tumor classification.",

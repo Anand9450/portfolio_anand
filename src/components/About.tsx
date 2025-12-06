@@ -9,6 +9,7 @@ const profileImages = [
   "/images/personal/p1.jpg",
   "/images/personal/p2.jpg",
   "/images/personal/p3.jpg",
+  "/images/personal/p4.jpg",
 ];
 
 const About = () => {
