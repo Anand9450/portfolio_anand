@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Anand Shukla
 
-## Getting Started
+This is the source code for my personal portfolio website, built to showcase my projects, skills, and professional journey as a Computer Science Engineer specializing in Backend Development and Machine Learning.
 
-First, run the development server:
+## 🚀 Live Demo
+
+Check out the live version here: [Your Live Portfolio Link](https://your-portfolio-link.com) 
+*(Note: Replace this with your actual Vercel/Netlify link once deployed)*
+
+## ✨ Features
+
+- **Modern & Responsive Design:** Built with **Next.js 15 (App Router)** and **Tailwind CSS** for a sleek, dark-mode-first aesthetic.
+- **Dynamic LeetCode Analytics:** Real-time integration with LeetCode API to display my problem-solving stats (Solved counts, Knight Badge, etc.).
+- **Interactive Tech Stack Marquee:** An infinitely scrolling ribbon showcasing my technical skills.
+- **Visual Certifications:** A gallery of my certifications with hover effects and direct links.
+- **Project Case Studies:** Detailed project pages with deep dives into functionality, tech stack, and challenges.
+- **Premium UI Details:** Custom scrollbars, glassmorphism effects, smooth animations (Framer Motion), and polished typography.
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (React)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Deployment:** Vercel / Netlify
+
+## 📂 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+src/
+├── app/                # Next.js App Router pages
+├── components/         # Reusable UI components (Hero, Skills, Projects, etc.)
+├── data/               # Static data files (portfolio.ts) for easy updates
+├── lib/                # Utility functions
+└── public/             # Static assets (images, pdfs)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ Getting Started Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Anand9450/portfolio_anand.git
+    cd portfolio_anand
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-## Learn More
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Open [http://localhost:3000](http://localhost:3000)** with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Feel free to reach out to me for collaborations or just a friendly hello!
 
-## Deploy on Vercel
+- **Email:** aananddshukla@gmail.com
+- **LinkedIn:** [Anand Shukla](https://www.linkedin.com/in/anand-shukla-9b6219256/)
+- **GitHub:** [Anand9450](https://github.com/Anand9450)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2025 Anand Shukla. All rights reserved.
