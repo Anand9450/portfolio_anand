@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectDetails({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetails({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
@@ -49,6 +50,18 @@ export default function ProjectDetails({ params }: { params: { slug: string } })
               className="object-cover"
             />
           </div>
+
+          {/* About */}
+          {project.about && (
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-white mb-4">About the Project</h2>
+              {project.about.map((paragraph, idx) => (
+                <p key={idx} className="text-gray-300 leading-relaxed text-lg">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          )}
 
           {/* Key Features */}
           <div>
@@ -126,6 +139,42 @@ export default function ProjectDetails({ params }: { params: { slug: string } })
               </a>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* More Projects */}
+      <div className="mt-20 border-t border-white/10 pt-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+          Explore More <span className="text-[#a31f4d]">Projects</span>
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects
+            .filter((p) => p.slug !== slug)
+            .slice(0, 3)
+            .map((otherProject) => (
+              <Link
+                key={otherProject.slug}
+                href={`/projects/${otherProject.slug}`}
+                className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#a31f4d]/50 transition-all duration-300 flex flex-col hover:-translate-y-1"
+              >
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={otherProject.image}
+                    alt={otherProject.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#a31f4d] transition-colors line-clamp-1">
+                    {otherProject.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm line-clamp-2">
+                    {otherProject.tagline}
+                  </p>
+                </div>
+              </Link>
+            ))}
         </div>
       </div>
     </div>

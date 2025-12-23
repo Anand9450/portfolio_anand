@@ -78,9 +78,13 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
               About <span className="text-[#a31f4d]">Me</span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
-              {personalInfo.bio}
-            </p>
+            <div className="space-y-4">
+              {personalInfo.about.map((paragraph, index) => (
+                <p key={index} className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
             {/* Education Section */}
             <div className="space-y-4 mt-6">

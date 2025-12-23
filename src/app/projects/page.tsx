@@ -38,8 +38,8 @@ const ProjectsPage = () => {
             key={cat}
             onClick={() => setFilter(cat)}
             className={`px-6 py-2 rounded-full border transition-all ${filter === cat
-                ? "bg-[#a31f4d] border-[#a31f4d] text-white"
-                : "bg-white/5 border-white/10 text-gray-400 hover:border-[#a31f4d]/50 hover:text-white"
+              ? "bg-[#a31f4d] border-[#a31f4d] text-white"
+              : "bg-white/5 border-white/10 text-gray-400 hover:border-[#a31f4d]/50 hover:text-white"
               }`}
           >
             {cat}
@@ -56,7 +56,7 @@ const ProjectsPage = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#a31f4d]/50 transition-all duration-300 flex flex-col"
+            className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#a31f4d]/50 transition-all duration-300 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#a31f4d]/10"
           >
             <div className="relative h-48 w-full overflow-hidden">
               <Image

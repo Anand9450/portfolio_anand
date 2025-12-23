@@ -94,7 +94,7 @@ const Contact = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-white/10 rounded-lg focus:outline-none focus:border-[#a31f4d] text-gray-900 dark:text-white transition-colors"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-white/10 rounded-lg focus:outline-none focus:border-[#a31f4d] focus:ring-1 focus:ring-[#a31f4d] text-gray-900 dark:text-white transition-all duration-300 hover:border-[#a31f4d]/50"
                   placeholder="Your Name"
                 />
               </div>
@@ -108,7 +108,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-white/10 rounded-lg focus:outline-none focus:border-[#a31f4d] text-gray-900 dark:text-white transition-colors"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-white/10 rounded-lg focus:outline-none focus:border-[#a31f4d] focus:ring-1 focus:ring-[#a31f4d] text-gray-900 dark:text-white transition-all duration-300 hover:border-[#a31f4d]/50"
                   placeholder="your@email.com"
                 />
               </div>
@@ -122,14 +122,14 @@ const Contact = () => {
                   name="message"
                   rows={4}
                   required
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-white/10 rounded-lg focus:outline-none focus:border-[#a31f4d] text-gray-900 dark:text-white transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-white/10 rounded-lg focus:outline-none focus:border-[#a31f4d] focus:ring-1 focus:ring-[#a31f4d] text-gray-900 dark:text-white transition-all duration-300 hover:border-[#a31f4d]/50 resize-none"
                   placeholder="Your message..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 bg-[#a31f4d] hover:bg-[#8a1a41] text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2 shadow-lg shadow-[#a31f4d]/20"
+                className="w-full py-3 bg-[#a31f4d] hover:bg-[#8a1a41] text-white rounded-lg font-medium transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-[#a31f4d]/20"
               >
                 Send Message
                 <Send size={18} />

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
 
@@ -34,9 +35,9 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group glass-card rounded-2xl overflow-hidden hover:border-[#a31f4d]/50 transition-all duration-300 hover:-translate-y-1"
+              className="group glass-card rounded-2xl overflow-hidden hover:border-[#a31f4d]/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#a31f4d]/10 flex flex-col h-full"
             >
-              <div className="relative h-48 w-full overflow-hidden">
+              <div className="relative h-48 w-full overflow-hidden shrink-0">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -44,10 +45,19 @@ const Projects = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="px-4 py-2 bg-[#a31f4d] text-white rounded-full text-sm font-medium hover:bg-[#8a1a41] transition-colors"
+                  >
+                    View Details
+                  </Link>
                   {project.github && (
                     <a
                       href={project.github}
-                      className="p-2 bg-white/10 rounded-full hover:bg-[#a31f4d] text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white/10 rounded-full hover:bg-white/20 text-white transition-colors"
+                      title="View Code"
                     >
                       <Github size={20} />
                     </a>
@@ -55,7 +65,10 @@ const Projects = () => {
                   {project.live && (
                     <a
                       href={project.live}
-                      className="p-2 bg-white/10 rounded-full hover:bg-[#a31f4d] text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white/10 rounded-full hover:bg-white/20 text-white transition-colors"
+                      title="Live Demo"
                     >
                       <ExternalLink size={20} />
                     </a>
@@ -63,18 +76,18 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#a31f4d] transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 flex-1">
                   {project.tagline}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.techStack.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 rounded text-gray-700 dark:text-gray-300"
+                      className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 rounded text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/5"
                     >
                       {tag}
                     </span>

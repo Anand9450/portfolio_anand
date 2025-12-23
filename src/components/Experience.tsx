@@ -33,22 +33,22 @@ const Experience = () => {
               className="relative pl-8 md:pl-0"
             >
               {/* Timeline Line */}
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-white/10 -translate-x-1/2" />
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-white/20 to-transparent -translate-x-1/2" />
 
               <div className={`md:flex items-center justify-between gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[#a31f4d] rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 ring-4 ring-white dark:ring-black" />
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[#a31f4d] rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 ring-4 ring-white dark:ring-black shadow-[0_0_10px_#a31f4d]" />
 
                 {/* Date */}
                 <div className={`md:w-1/2 mb-2 md:mb-0 ${index % 2 === 0 ? "md:text-left md:pl-8" : "md:text-right md:pr-8"}`}>
-                  <span className="inline-block px-3 py-1 bg-[#a31f4d]/10 text-[#a31f4d] rounded-full text-sm font-medium">
+                  <span className="inline-block px-4 py-1.5 bg-[#a31f4d]/10 text-[#a31f4d] rounded-full text-sm font-bold border border-[#a31f4d]/20">
                     {exp.period}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
-                  <div className="bg-white dark:bg-white/5 p-6 rounded-2xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none hover:border-[#a31f4d]/50 transition-colors">
+                  <div className="bg-white dark:bg-white/5 p-6 rounded-2xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none hover:border-[#a31f4d]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#a31f4d]/5">
                     <div className="flex items-center gap-3 mb-2">
                       <Briefcase className="text-[#a31f4d]" size={20} />
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white">{exp.role}</h3>

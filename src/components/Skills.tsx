@@ -41,7 +41,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass-card rounded-2xl p-6 hover:border-[#a31f4d]/50 transition-colors"
+              className="glass-card rounded-2xl p-6 hover:border-[#a31f4d]/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#a31f4d]/10"
             >
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-white/10 pb-2">
                 {skillGroup.category}
@@ -50,7 +50,7 @@ const Skills = () => {
                 {skillGroup.items.map((item) => (
                   <span
                     key={item}
-                    className="px-3 py-1 bg-gray-100 dark:bg-white/5 rounded-full text-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/5 hover:bg-[#a31f4d]/20 hover:text-[#a31f4d] dark:hover:text-white transition-colors cursor-default"
+                    className="px-3 py-1 bg-gray-100 dark:bg-white/5 rounded-full text-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/5 hover:bg-[#a31f4d] hover:text-white hover:border-[#a31f4d] transition-all duration-300 cursor-default shadow-sm hover:shadow-md hover:shadow-[#a31f4d]/30"
                   >
                     {item}
                   </span>

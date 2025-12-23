@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -9,19 +8,38 @@ import { ThemeToggle } from "./ThemeToggle";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      setScrolled(window.scrollY > 50);
+
+      // Scroll Spy Logic
+      const sections = navLinks.map(link => link.name.toLowerCase().replace(" ", "-"));
+      let current = "";
+
+      for (const section of sections) {
+        const element = document.getElementById(section === "home" ? "home" : section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Offset for navbar height
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            current = section;
+          }
+        }
       }
+
+      // Improve hit detection for bottom of page
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+        current = "contact";
+      }
+
+      if (current) setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []); // navLinks dependency removed to avoid re-bind, static list
 
   const navLinks = [
     { name: "Home", href: "/#home" },
@@ -47,16 +65,35 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-[#a31f4d] dark:hover:text-[#a31f4d] transition-colors text-sm font-medium uppercase tracking-wider"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <ThemeToggle />
+            {navLinks.map((link) => {
+              const sectionName = link.name.toLowerCase().replace(" ", "-");
+              const isActive = activeSection === (sectionName === "home" ? "home" : sectionName);
+
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-medium uppercase tracking-wider transition-colors relative group ${isActive
+                      ? "text-[#a31f4d]"
+                      : "text-gray-600 dark:text-gray-300 hover:text-[#a31f4d] dark:hover:text-[#a31f4d]"
+                    }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeSection"
+                      className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#a31f4d] rounded-full"
+                    />
+                  )}
+                  {!isActive && (
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#a31f4d] rounded-full group-hover:w-full transition-all duration-300" />
+                  )}
+                </Link>
+              );
+            })}
+            <div className="ml-4">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,16 +119,21 @@ const Navbar = () => {
             className="md:hidden bg-white/95 dark:bg-black/95 backdrop-blur-xl border-b border-gray-200 dark:border-white/10"
           >
             <div className="px-4 pt-2 pb-8 space-y-4 flex flex-col items-center">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-gray-900 dark:text-gray-300 hover:text-[#a31f4d] text-lg font-medium py-2"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const sectionName = link.name.toLowerCase().replace(" ", "-");
+                const isActive = activeSection === (sectionName === "home" ? "home" : sectionName);
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-lg font-medium py-2 ${isActive ? "text-[#a31f4d]" : "text-gray-900 dark:text-gray-300 hover:text-[#a31f4d]"
+                      }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         )}
